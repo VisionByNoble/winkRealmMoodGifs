@@ -56,6 +56,7 @@
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
             transition: transform 0.3s ease;
+            cursor: pointer;
         }
         .gif:hover {
             transform: scale(1.05);
@@ -82,37 +83,37 @@
         </div>
 
         <div id="chill" class="gif-category">
-            <img src="/chillVibes/61.gif" class="gif" alt="Chill Gif">
-            <img src="/chillVibes/101.gif" class="gif" alt="Chill Gif">
-            <img src="/chillVibes/128.gif" class="gif" alt="Chill Gif">
+            <img src="/chillVibes/61.gif" class="gif" alt="Chill Gif" onclick="shareToX('/chillVibes/61.gif')">
+            <img src="/chillVibes/101.gif" class="gif" alt="Chill Gif" onclick="shareToX('/chillVibes/101.gif')">
+            <img src="/chillVibes/128.gif" class="gif" alt="Chill Gif" onclick="shareToX('/chillVibes/128.gif')">
             <!-- More gifs for Chill Vibes -->
         </div>
         <div id="excited" class="gif-category">
-            <img src="/excitedActive/64.gif" class="gif" alt="Excited Gif">
-            <img src="/excitedActive/91.gif" class="gif" alt="Excited Gif">
-            <img src="/excitedActive/118.gif" class="gif" alt="Excited Gif">
+            <img src="/excitedActive/64.gif" class="gif" alt="Excited Gif" onclick="shareToX('/excitedActive/64.gif')">
+            <img src="/excitedActive/91.gif" class="gif" alt="Excited Gif" onclick="shareToX('/excitedActive/91.gif')">
+            <img src="/excitedActive/118.gif" class="gif" alt="Excited Gif" onclick="shareToX('/excitedActive/118.gif')">
             <!-- More gifs for Excited/Active -->
         </div>
         <div id="confused" class="gif-category">
-            <img src="/confusedQuestioning/79.gif" class="gif" alt="Confused Gif">
-            <img src="/confusedQuestioning/117.gif" class="gif" alt="Confused Gif">
-            <img src="/confusedQuestioning/125.gif" class="gif" alt="Confused Gif">
+            <img src="/confusedQuestioning/79.gif" class="gif" alt="Confused Gif" onclick="shareToX('/confusedQuestioning/79.gif')">
+            <img src="/confusedQuestioning/117.gif" class="gif" alt="Confused Gif" onclick="shareToX('/confusedQuestioning/117.gif')">
+            <img src="/confusedQuestioning/125.gif" class="gif" alt="Confused Gif" onclick="shareToX('/confusedQuestioning/125.gif')">
             <!-- More gifs for Confused -->
         </div>
         <div id="community" class="gif-category">
-            <img src="/communityEngagment/82.gif" class="gif" alt="Community Gif">
-            <img src="/communityEngagment/121.gif" class="gif" alt="Community Gif">
+            <img src="/communityEngagment/82.gif" class="gif" alt="Community Gif" onclick="shareToX('/communityEngagment/82.gif')">
+            <img src="/communityEngagment/121.gif" class="gif" alt="Community Gif" onclick="shareToX('/communityEngagment/121.gif')">
             <!-- More gifs for Community & Engagement -->
         </div>
         <div id="playful" class="gif-category">
-            <img src="/playfulFun/66.gif" class="gif" alt="Playful Gif">
-            <img src="/playfulFun/127.gif" class="gif" alt="Playful Gif">
-            <img src="/playfulFun/130.gif" class="gif" alt="Playful Gif">
+            <img src="/playfulFun/66.gif" class="gif" alt="Playful Gif" onclick="shareToX('/playfulFun/66.gif')">
+            <img src="/playfulFun/127.gif" class="gif" alt="Playful Gif" onclick="shareToX('/playfulFun/127.gif')">
+            <img src="/playfulFun/130.gif" class="gif" alt="Playful Gif" onclick="shareToX('/playfulFun/130.gif')">
             <!-- More gifs for Playful/Fun -->
         </div>
         <div id="glitchy" class="gif-category">
-            <img src="/glitchyCool/67.gif" class="gif" alt="Glitchy Gif">
-            <img src="/glitchyCool/123.gif" class="gif" alt="Glitchy Gif">
+            <img src="/glitchyCool/67.gif" class="gif" alt="Glitchy Gif" onclick="shareToX('/glitchyCool/67.gif')">
+            <img src="/glitchyCool/123.gif" class="gif" alt="Glitchy Gif" onclick="shareToX('/glitchyCool/123.gif')">
             <!-- More gifs for Glitchy/Cool -->
         </div>
     </div>
@@ -133,6 +134,17 @@
                     cat.style.display = 'none'; // Hide the others
                 }
             });
+        }
+
+        // Function to handle sharing the gif URL to X
+        function shareToX(gifUrl) {
+            const downloadUrl = `${gifUrl}`; // Just the direct gif link
+
+            // Create a new anchor element to simulate a download
+            const a = document.createElement('a');
+            a.href = downloadUrl;
+            a.download = gifUrl.split('/').pop(); // Set the filename as the gif name
+            a.click();
         }
     </script>
 </body>
