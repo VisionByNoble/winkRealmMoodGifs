@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wink Realm Mood-Based Gif Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1E1E1E;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3rem;
+            color: #ff4081;
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: #ff4081;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 1.2rem;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        button:hover {
+            background-color: #ff80ab;
+            transform: scale(1.05);
+        }
+        .gif-category {
+            display: none;
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .gif {
+            width: 200px;
+            height: auto;
+            margin: 10px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease;
+        }
+        .gif:hover {
+            transform: scale(1.05);
+        }
+        .category-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Wink Realm Mood-Based Gif Gallery</h1>
+
+        <div class="category-buttons">
+            <button onclick="showCategory('chill')">Chill Vibes</button>
+            <button onclick="showCategory('excited')">Excited/Active</button>
+            <button onclick="showCategory('confused')">Confused/Questioning</button>
+            <button onclick="showCategory('community')">Community & Engagement</button>
+            <button onclick="showCategory('playful')">Playful/Fun</button>
+            <button onclick="showCategory('glitchy')">Glitchy/Cool</button>
+        </div>
+
+        <div id="chill" class="gif-category">
+            <img src="/chillVibes/61.gif" class="gif" alt="Chill Gif">
+            <img src="/chillVibes/101.gif" class="gif" alt="Chill Gif">
+            <img src="/chillVibes/128.gif" class="gif" alt="Chill Gif">
+            <!-- More gifs for Chill Vibes -->
+        </div>
+        <div id="excited" class="gif-category">
+            <img src="/excitedActive/64.gif" class="gif" alt="Excited Gif">
+            <img src="/excitedActive/91.gif" class="gif" alt="Excited Gif">
+            <img src="/excitedActive/118.gif" class="gif" alt="Excited Gif">
+            <!-- More gifs for Excited/Active -->
+        </div>
+        <div id="confused" class="gif-category">
+            <img src="/confusedQuestioning/79.gif" class="gif" alt="Confused Gif">
+            <img src="/confusedQuestioning/117.gif" class="gif" alt="Confused Gif">
+            <img src="/confusedQuestioning/125.gif" class="gif" alt="Confused Gif">
+            <!-- More gifs for Confused -->
+        </div>
+        <div id="community" class="gif-category">
+            <img src="/communityEngagment/82.gif" class="gif" alt="Community Gif">
+            <img src="/communityEngagment/121.gif" class="gif" alt="Community Gif">
+            <!-- More gifs for Community & Engagement -->
+        </div>
+        <div id="playful" class="gif-category">
+            <img src="/playfulFun/66.gif" class="gif" alt="Playful Gif">
+            <img src="/playfulFun/127.gif" class="gif" alt="Playful Gif">
+            <img src="/playfulFun/130.gif" class="gif" alt="Playful Gif">
+            <!-- More gifs for Playful/Fun -->
+        </div>
+        <div id="glitchy" class="gif-category">
+            <img src="/glitchyCool/67.gif" class="gif" alt="Glitchy Gif">
+            <img src="/glitchyCool/123.gif" class="gif" alt="Glitchy Gif">
+            <!-- More gifs for Glitchy/Cool -->
+        </div>
+    </div>
+
+    <script>
+        // Hide all categories initially
+        document.addEventListener('DOMContentLoaded', function() {
+            let categories = document.querySelectorAll('.gif-category');
+            categories.forEach(cat => cat.style.display = 'none');
+        });
+
+        function showCategory(category) {
+            let categories = document.querySelectorAll('.gif-category');
+            categories.forEach(cat => {
+                if (cat.id === category) {
+                    cat.style.display = 'flex'; // Show the selected category
+                } else {
+                    cat.style.display = 'none'; // Hide the others
+                }
+            });
+        }
+    </script>
+</body>
+</html>
