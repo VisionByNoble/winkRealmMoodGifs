@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wink Realm Mood-Based Image Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1E1E1E;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 3rem;
+            color: #ff4081;
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: #ff4081;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 1.2rem;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        button:hover {
+            background-color: #ff80ab;
+            transform: scale(1.05);
+        }
+        .image-category {
+            display: none;
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        .image {
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            max-width: 300px;
+            height: auto;
+        }
+        .image:hover {
+            transform: scale(1.05);
+        }
+        .category-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="stills.html" target="_blank">View Mood-Based Stills Gallery</a>
+        <h1>Wink Realm Mood-Based Image Gallery</h1>
+
+        <div class="category-buttons">
+            <button onclick="showCategory('chill')">Chill Vibes</button>
+            <button onclick="showCategory('excited')">Excited and Active</button>
+            <button onclick="showCategory('confused')">Confused and Questioning</button>
+            <button onclick="showCategory('community')">Community and Engagement</button>
+            <button onclick="showCategory('playful')">Playful and Fun</button>
+            <button onclick="showCategory('glitchy')">Adventurous and Traveling</button>
+            <button onclick="showCategory('avalanche')">Avalanche Logo</button>
+        </div>
+
+        <!-- Mood-Based Image Categories -->
+        <div id="chill" class="image-category">
+            <img src="/3.png" class="image" alt="Chill 1" onclick="shareToX('/3.png')">
+            <img src="/6.png" class="image" alt="Chill 2" onclick="shareToX('/6.png')">
+            <img src="/21.png" class="image" alt="Chill 3" onclick="shareToX('/21.png')">
+            <img src="/20.png" class="image" alt="Chill 4" onclick="shareToX('/20.png')">
+            <img src="/43.png" class="image" alt="Chill 5" onclick="shareToX('/43.png')">
+        </div>
+
+        <div id="excited" class="image-category">
+            <img src="/58.png" class="image" alt="Excited 1" onclick="shareToX('/58.png')">
+            <img src="/51.png" class="image" alt="Excited 2" onclick="shareToX('/51.png')">
+            <img src="/50.png" class="image" alt="Excited 3" onclick="shareToX('/50.png')">
+            <img src="/15.png" class="image" alt="Excited 4" onclick="shareToX('/15.png')">
+            <img src="/2.png" class="image" alt="Excited 5" onclick="shareToX('/2.png')">
+        </div>
+
+        <div id="confused" class="image-category">
+            <img src="/55.png" class="image" alt="Confused 1" onclick="shareToX('/55.png')">
+            <img src="/48.png" class="image" alt="Confused 2" onclick="shareToX('/48.png')">
+            <img src="/24.png" class="image" alt="Confused 3" onclick="shareToX('/24.png')">
+            <img src="/18.png" class="image" alt="Confused 4" onclick="shareToX('/18.png')">
+            <img src="/7.png" class="image" alt="Confused 5" onclick="shareToX('/7.png')">
+        </div>
+
+        <div id="community" class="image-category">
+            <img src="/4.png" class="image" alt="Community 1" onclick="shareToX('/4.png')">
+            <img src="/12.png" class="image" alt="Community 2" onclick="shareToX('/12.png')">
+            <img src="/31.png" class="image" alt="Community 3" onclick="shareToX('/31.png')">
+            <img src="/47.png" class="image" alt="Community 4" onclick="shareToX('/47.png')">
+            <img src="/32.png" class="image" alt="Community 5" onclick="shareToX('/32.png')">
+        </div>
+
+        <div id="playful" class="image-category">
+            <img src="/56.png" class="image" alt="Playful 1" onclick="shareToX('/56.png')">
+            <img src="/52.png" class="image" alt="Playful 2" onclick="shareToX('/52.png')">
+            <img src="/46.png" class="image" alt="Playful 3" onclick="shareToX('/46.png')">
+            <img src="/39.png" class="image" alt="Playful 4" onclick="shareToX('/39.png')">
+            <img src="/30.png" class="image" alt="Playful 5" onclick="shareToX('/30.png')">
+        </div>
+        
+        <div id="avalanche" class="image-category">
+            <img src="/49.png" class="image" alt="Avalanche 1" onclick="shareToX('/49.png')">
+            <img src="/27.png" class="image" alt="Avalanche 2" onclick="shareToX('/27.png')">
+            <img src="/19.png" class="image" alt="Avalanche 3" onclick="shareToX('/19.png')">
+            <img src="/1.png" class="image" alt="Avalanche 4" onclick="shareToX('/1.png')">
+            <img src="/17.png" class="image" alt="Avalanche 5" onclick="shareToX('/17.png')">
+        </div>
+
+        <div id="glitchy" class="image-category">
+            <img src="/5.png" class="image" alt="Glitchy 1" onclick="shareToX('/5.png')">
+            <img src="/9.png" class="image" alt="Glitchy 2" onclick="shareToX('/9.png')">
+            <img src="/16.png" class="image" alt="Glitchy 3" onclick="shareToX('/16.png')">
+            <img src="/23.png" class="image" alt="Glitchy 4" onclick="shareToX('/23.png')">
+            <img src="/25.png" class="image" alt="Glitchy 5" onclick="shareToX('/25.png')">
+            <img src="/26.png" class="image" alt="Glitchy 6" onclick="shareToX('/26.png')">
+            <img src="/28.png" class="image" alt="Glitchy 7" onclick="shareToX('/28.png')">
+            <img src="/37.png" class="image" alt="Glitchy 8" onclick="shareToX('/37.png')">
+            <img src="/58.png" class="image" alt="Glitchy 9" onclick="shareToX('/58.png')">
+            <img src="/59.png" class="image" alt="Glitchy 10" onclick="shareToX('/59.png')">
+        </div>
+    </div>
+
+    <script>
+        // Hide all categories initially
+document.addEventListener('DOMContentLoaded', function() {
+    let categories = document.querySelectorAll('.image-category'); // Correct class name
+    categories.forEach(cat => cat.style.display = 'none');
+});
+
+function showCategory(category) {
+    let categories = document.querySelectorAll('.image-category'); // Correct class name
+    categories.forEach(cat => {
+        if (cat.id === category) {
+            cat.style.display = 'flex'; // Show the selected category
+        } else {
+            cat.style.display = 'none'; // Hide the others
+        }
+    });
+}
+
+        // Function to handle sharing the image URL to X (Twitter)
+        function shareToX(imageUrl) {
+            const tweetText = "Check out this awesome image from Wink Realm!"; // Customize the tweet text
+            const twitterUrl = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(tweetText) + "&url=" + encodeURIComponent(imageUrl);
+
+            // Open the Twitter sharing URL in a new window
+            window.open(twitterUrl, "_blank", "width=600,height=400");
+        }
+    </script>
+</body>
+</html>
